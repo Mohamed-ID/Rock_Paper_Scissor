@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.parent {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.parent .card {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.parent .card .bot {
+    align-self: center;
+}
+
+.parent .card .player {
+    display: flex;
+    gap: 20px;
+}
+
+.parent .card .bot .mybot,
+.parent .card .player .playerCard {
+    width: 180px;
+    height: 260px;
+    background-color: #f0f0f0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent .card .player .playerCard {
+    cursor: pointer;
+}
+
+.parent .card .bot .mybot::after,
+.parent .card .player .playerCard::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    border: 5px solid;
+    border-radius: 10px;
+}
+
+.parent .card .player .playerCard::after {
+    border-color: rgb(0, 174, 255);
+}
+
+.parent .card .bot .mybot::after {
+    border-color: rgb(255, 94, 0);
+}
+
+.parent .card .bot .mybot i,
+.parent .card .player .playerCard i {
+    font-size: 30px;
+}
+
+.parent .card .player .playerCard:nth-child(3) i {
+    transform: rotate(80deg);
+}
+
+
+
+/* Win or Lose */
+
+.parent .status {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.parent .status::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #535353;
+    opacity: 0.3;
+    z-index: 200;
+}
+
+.parent .status h1 {
+    color: black;
+    padding: 30px 80px;
+    background-color: white;
+    z-index: 999;
+    border-radius: 10px;
+}
+
